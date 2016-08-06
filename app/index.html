@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en" ng-app="strv">
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -33,9 +33,9 @@
     <div class="header">
       
       <ul class="navigationMenu hidden-xs">
-        <li class="navOption"><a href="#">ABOUT US</a></li>
-        <li class="navOption"><a href="#">HOW IT WORKS</a></li>
-        <li class="navOption"><a href="#">COMMENT</a></li>
+        <li class="navOption"><a href="#about-us">ABOUT US</a></li>
+        <li class="navOption"><a href="#how-it-works">HOW IT WORKS</a></li>
+        <li class="navOption"><a href="#comments">COMMENT</a></li>
       </ul>
       
       <i class="glyphicon glyphicon-menu-hamburger visible-xs" id="openMenu"></i>
@@ -56,7 +56,6 @@
       <h5>Simple Designy Car for Designers</h5>
   
       <button class="red-button">LEAVE A COMMENT
-        <!--<i class="glyphicon glyphicon-chevron-right"></i>-->
         <img src="images/icons/arrow-icn.svg">
       </button>
 
@@ -67,7 +66,7 @@
     <div class="container">
 
       <!--//////////////////////////////  -  ABOUT US  -  ///////-->
-      <div class="aboutUs">
+      <div id="about-us" class="aboutUs">
         <h3 class="numberSection">01</h3>
         <h3 class="titleSection">ABOUT US</h3>
         <h2>HANDMADE</h2>
@@ -99,7 +98,7 @@
     </div>
 
     <!-- ///////////////////////////////  - HOW IT WORKS - //////////////-->
-    <section class="how-it-works">
+    <section id="how-it-works" class="how-it-works">
       <div class="container">
         <h3 class="numberSection">02</h3>
         <h3 class="titleSection">HOW IT WORKS</h3>
@@ -119,7 +118,6 @@
           </div>
         </div>
         <button class="red-button">CHOOSE YOUR DESIGNER
-          <!--<i class="glyphicon glyphicon-chevron-right"></i>-->
           <img src="images/icons/arrow-icn.svg">
         </button>
         <h2 class="watermark hidden-xs">STRV M6</h2>
@@ -129,7 +127,7 @@
 
 
     <!-- ///////////////////////////////  - COMMENTS - //////////////-->
-    <section class="comments">
+    <section id="comments" class="comments">
       <div class="container">
         <h3 class="numberSection">03</h3>
         <h3 class="titleSection">COMMENTS</h3>
@@ -192,7 +190,6 @@
       <h5>Simple Designy Car for Designers</h5>
 
       <button class="red-button">BUILD YOUR OWN
-        <!--<i class="glyphicon glyphicon-chevron-right"></i>-->
         <img src="images/icons/arrow-icn.svg">
       </button>
 
@@ -218,6 +215,7 @@
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     
@@ -237,6 +235,7 @@
     <!-- endbuild -->
     
     <!-- build:js scripts/main.js -->
+    <script src="scripts/app.js"></script>
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
   </body>
