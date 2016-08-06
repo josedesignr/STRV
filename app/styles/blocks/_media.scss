@@ -1,0 +1,125 @@
+
+
+h1{
+	font-family: 'Roboto', sans-serif !important;
+	font-weight: 700 !important;
+	color: white !important;
+	text-align: center;
+}
+
+h5{
+	font-weight: 200 !important;
+	font-size: 2em !important;
+	color: white !important;
+	text-align: center;
+	display: block;
+}
+
+.numberSection {
+	color: $light-gray !important;
+	padding: 50px 0 0 100px;
+}
+
+.titleSection{
+	font-family: 'Roboto', sans-serif;
+	padding-left: 100px;
+	font-size: 2.2em;
+	font-weight: 700;
+	color: black;
+	margin: 0;
+}
+
+.red-line{
+	background-color: $red;
+	margin-left: 100px;
+	margin-top: 15px;
+	height: 80px;
+	width: 3px;
+}
+
+.red-button{
+	font-family: 'Roboto', sans-serif;
+	background-color: $red;
+	position: relative;
+	text-align: left;
+	font-size: 1rem;
+	display: block;
+	padding: 15px;
+	outline: none;
+	border: none;
+	color: white;
+	width: 223px;
+	height: 60px;
+	margin: auto;
+	margin-top: 72px;
+	&>i{
+		position: absolute;
+		line-height: 60px;
+		right: 15px;
+		color: white;
+	}
+	&>img{
+		position: absolute;
+		right: 15px;
+		top: 23px;
+	}
+	&:hover{
+		background-color: lighten($red, 5%);
+	}
+	&:active{
+		background-color: darken($red, 10%);
+	}
+}
+
+.watermark{
+	font-family: 'Roboto', sans-serif;
+	color: rgba(255,255,255,0.15);
+	letter-spacing: -10px;
+	text-align: center;
+	font-weight: 700;
+	width: 100%;
+}
+
+.avatar{
+	width: 60px;
+	height: 60px;
+}
+
+
+.commentPanel {
+	box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.06);
+	background: #FFFFFF; 
+	padding: 20px 80px;
+	position: relative;
+	margin-top: 20px;
+}
+
+
+@media screen and (min-width: 320px) and  (max-width: 767px) {
+	.numberSection{
+		padding: 50px 0 0;
+	}
+
+	.titleSection {
+		padding-left: 0;
+	}
+
+	.avatar{
+		display: block;
+		margin: auto;
+	}
+
+	.commentPanel{
+		padding: 20px;
+	}
+
+	h5 {
+		max-width: 180px;
+		margin: auto;
+	}
+}
+
+/*For screens between 768 and 1199px*/
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+	/*Not needed*/
+}

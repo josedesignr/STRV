@@ -1,0 +1,108 @@
+.container {
+	width: 1200px;
+	&>.aboutUs{
+		position: relative;
+		&>h2{
+			font-family: 'Roboto', sans-serif;
+			font-weight: 900;
+			font-size: 21em;
+			text-align: center;
+			color: rgba(0,0,0,0.05);
+		}
+		&>.panelFeatures{
+			box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.17);
+			padding: 20px 50px;
+			position: absolute;
+			background: white;
+			width: 1060px;
+			top: 300px;
+			left: 50%;
+			-webkit-transform: translate(-50%, 0);
+			&> section {
+				text-align: center;
+				margin-top: 60px;
+				padding: 0;
+				&>div{
+					padding: 0 45px;
+					border-right: 1px solid lightgray;
+					&> h3 {
+						font-family: 'Roboto', sans-serif;
+						text-align: left;
+						font-weight: 400;
+						font-size: 2.6em;
+						margin-top: 60px;
+					}
+					&> p {
+						font-family: 'Roboto', sans-serif;
+						text-align: justify;
+						font-weight: 100;
+						font-size: 1.5em;
+						line-height: 2em;
+						padding: 36px 0;
+						color: $text-gray;
+					}
+				}
+			}	
+		}
+	}
+}
+
+/*For screens between 320px and 768px*/
+@media screen and (min-width: 320px) and  (max-width: 767px) {
+	.container {
+		width: 100%;
+		&>.aboutUs {
+			&>h2 {
+				word-wrap:break-word;
+				font-size: 12em;
+				font-weight: 700;
+				line-height: 90px;
+				letter-spacing: -10px;
+				max-width: 320px;
+				margin-top: 50px;
+			}
+			&>.panelFeatures{
+				width: 100%;
+				top: 330px;
+				padding: 0;
+				&> section{
+					&>div{
+						padding: 0 30px;
+						border-right: none;
+						&> p{
+							border-bottom: 1px solid lightgray;
+						}
+					}
+				}	
+			}
+		}
+	}
+}
+
+/*For screens between 768 and 1199px*/
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+	.container {
+		&>.aboutUs {
+			&>h2 {
+				word-wrap:break-word;
+				line-height: 160px;
+				letter-spacing: -10px;
+			}
+			&>.panelFeatures{
+				top: 420px;
+				width: 100%;
+				&> section{
+					&> div{
+						padding: 0 30px;
+						border-right: none;
+						max-width: 320px;
+						margin: auto;
+						&> p{
+							border-bottom: 1px solid lightgray;
+						}
+					}
+				}
+			}
+		}
+	}
+}

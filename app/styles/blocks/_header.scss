@@ -1,0 +1,117 @@
+
+.header{
+	background-image: url('../images/header.png');
+	height: 943px;
+	background-repeat: no-repeat;
+	background-position: 40% 0;
+	border: none !important;
+	position: relative;
+	&>nav{
+		background-color: white;
+		left: calc(100%);
+		position: fixed;
+		height: 100%;
+		z-index: 100;
+		width: 100%;
+		top: 0;
+		-ms-transition:all ease-in-out 0.4s;
+		-o-transition:all ease-in-out 0.4s;
+		-moz-transition:all ease-in-out 0.4s;
+		-webkit-transition:all ease-in-out 0.4s;
+		transition:all ease-in-out 0.4s;
+		&>div {
+			&>i {
+				left: calc(100% - 50px);
+				font-size: 2.3em;
+			    color: black;
+			    top: 30px;
+			}
+			&>ul {
+				text-align: center;
+				margin-top: 200px;
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				&>li{
+					margin: 50px;
+					&>a{
+						font-family: 'Roboto', sans-serif;
+						font-weight: 700;
+						font-size: 1rem;
+						color: black;
+						&:hover {
+							text-decoration: none;
+							color: $red;
+						}
+					}
+				}
+			}
+		}
+	}
+	&>i {
+		position: absolute;
+		font-size: 2.2em;
+		cursor: pointer;
+		color: white;
+	    right: 25px;
+	    top: 30px;
+	}
+	&>.navigationMenu {
+		text-align: center;
+		padding: 59px 0 0;
+		margin: 0;
+		&>.navOption{
+			font-family: 'Roboto', sans-serif;
+			font-weight: 700;
+			display: inline-block;
+			margin: 0 12px;
+			&>a{
+				color: rgba(255,255,255,0.6) !important;
+				&:hover{
+					color: white !important;
+					text-decoration: none;
+					border-bottom: 2px solid $red;
+				}	
+			}
+		}
+	}
+	&>h1{
+		padding-top: 290px;
+		font-size: 9em !important;
+	}
+	&>h2{
+		position: absolute;
+		line-height: 200px;
+		font-size: 24em;
+		bottom: 0;
+	}
+}
+
+.menu-is-open {
+	left: 0 !important;
+}
+
+
+/*For screens between 320px and 768px*/
+@media screen and (min-width: 320px) and  (max-width: 767px) {
+	.header{
+		&>h1{
+			max-width: 250px;
+			padding-top: 200px;
+			margin: auto;
+		}
+	}
+}
+
+/*For screens between 768 and 1199px*/
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+	.header{
+		&>h1{
+			padding-top: 340px;
+			margin: auto;
+		}
+		&>h2{
+			font-size: 22em;
+		}
+	}
+}

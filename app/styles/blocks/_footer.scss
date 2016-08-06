@@ -1,0 +1,45 @@
+.get-yours {
+	background-image: url('../images/footer.png');
+	background-repeat: no-repeat;
+	background-position: 40% 0;
+	position: relative;
+	height: 880px;
+	width: 100%;
+	&> h1{
+		font-size: 7em !important;
+		padding-top: 300px;
+	}
+	&> footer{
+		position: absolute;
+		background: black;
+		height: 100px;
+		width: 100%;
+		bottom: 0;
+		&>div{
+			text-align: center;
+			&> h6{
+			font-family: 'Roboto', sans-serif;
+			display: inline-block;
+			text-align: center;
+			line-height: 100px;
+			font-weight: 700;
+			color: white;
+			margin: 0;
+			}
+			&>img{
+				margin: 5px;
+			}	
+		}
+	}
+}
+
+/*For screens between 320px and 768px*/
+@media screen and (min-width: 320px) and  (max-width: 767px) {
+	.get-yours{
+		&>h1{
+			padding-top: 200px;
+			max-width: 250px;
+			margin: auto;
+		}
+	}
+}
