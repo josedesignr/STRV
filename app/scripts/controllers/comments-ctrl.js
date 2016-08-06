@@ -9,11 +9,28 @@
 angular.module('strv').controller('CommentsCtrl', ['$scope', '$http', function ($scope, $http) {
 
 
-	$http.get('json/comments.txt').success(function(data) {
-      //$scope.amountComments = data.comments.length;
+	$scope.comments = [];
+
+	$http.get('json/comments.json').success(function(data) {
+      $scope.amountComments = data.comments.length;
       $scope.comments = data.comments;
-      console.log("DATA:");
-      console.log($scope.comments[0]);
     });
+
+    $scope.myAvatar = "avatar-me.png";
+
+    $scope.commentNotSent = "";
+
+    $scope.addReview = function(_comment){
+    	$scope.objToAdd = {
+    		"Avatar": $scope.myAvatar,
+    		"Name": "Álvaro José",
+    		"Lastname": "Solís",
+    		"Date": Date.now(),
+    		"Comment": _comment,
+    		"Replies": []
+    	}
+		$scope.comments.push($scope.objToAdd);
+		$scope.commentNotSent = "";
+	};
 
 }]);

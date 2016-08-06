@@ -20,6 +20,7 @@
 				&>button{
 					background-image: url('../images/icons/icn-send.svg');
 					background-color: transparent;
+					outline:none;
 					height: 30px;
 					width: 30px;
 					border: 0;
@@ -37,44 +38,46 @@
 				font-weight: 100;
 				font-size: 2.6em;
 			}
-			&>.posted{
-				&>.avatar{
-					display: inline-block;
-					vertical-align: top;
-				}
-				&>.postInfo{
-					font-family: 'Roboto', sans-serif;
-					width: calc(100% - 70px);
-					display: inline-block;
-					padding-left: 20px;
-					color: $text-gray;
-					font-weight: 400;
-					padding: 12px;
-					height: 60px;
-					&>span{
+			&>div{
+				&>.posted{
+					&>.avatar{
+						display: inline-block;
+						vertical-align: top;
+					}
+					&>.postInfo{
+						font-family: 'Roboto', sans-serif;
+						width: calc(100% - 70px);
+						display: inline-block;
+						padding-left: 20px;
+						color: $text-gray;
+						font-weight: 400;
+						padding: 12px;
+						height: 60px;
+						&>span{
+							font-size: 1rem;
+						}
+						&>small{
+							font-size: 1.2em;
+							color: $light-gray;
+						}
+						&>img{
+							position: absolute;
+							right: 30px;
+							top: 20px;
+						}
+					}
+					&>p{
+						font-family: 'Roboto', sans-serif;
+						color: $text-gray;
+						font-weight: 100;
+						margin-top: 20px;
 						font-size: 1rem;
-					}
-					&>small{
-						font-size: 1.2em;
-						color: $light-gray;
-					}
-					&>img{
-						position: absolute;
-						right: 30px;
-						top: 20px;
-					}
+					}	
 				}
-				&>p{
-					font-family: 'Roboto', sans-serif;
-					color: $text-gray;
-					font-weight: 100;
-					margin-top: 20px;
-					font-size: 1rem;
-				}	
-			}
-			&>.reply{
-				border-left: 3px solid $red;
-				margin-left: 80px;
+				&>.reply{
+					border-left: 3px solid $red;
+					margin-left: 80px;
+				}
 			}
 		}
 	}	
@@ -101,8 +104,10 @@
 			}
 			&>.postedComments{
 				width: 100%;
-				&>.reply{
-					margin-left: 0;
+				&>div{
+					&>.reply{
+						margin-left: 0;
+					}
 				}
 				&>h3{
 					text-align: center;

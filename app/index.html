@@ -25,7 +25,7 @@
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body>
+  <body ng-cloak>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -134,52 +134,40 @@
         <div class="red-line hidden-xs"></div>
 
         <div class="commentPanel">
-          <img class="avatar" src="images/avatar-me.png">
+          <img class="avatar" ng-src="images/{{myAvatar}}">
           <div class="commentInput">
-            <input type="text" placeholder="Write your comment here...">
-            <button><!--Icon SEND goes here via CSS--></button>
+            <input type="text" placeholder="Write your comment here..." ng-model="commentNotSent">
+            <button type="submit" ng-click="addReview(commentNotSent)"><!--Icon SEND goes here via CSS--></button>
           </div>
         </div>
 
         <div class="postedComments">
 
-          <h3>3 Comments</h3>
+          <h3>{{amountComments}} Comments</h3>
 
-          <div class="commentPanel posted">
-            <img class="avatar" src="images/avatar-alfred.png">
-            <div class="postInfo">
-              <span>Alfred Henderson</span>
-              <br>
-              <small>4 days ago</small> 
-              <img src="images/icons/reply-icn.svg">
+          <div ng-repeat="comment in comments | reverse">
+            <div class="commentPanel posted">
+              <img class="avatar" ng-src="images/{{comment.Avatar}}">
+              <div class="postInfo">
+                <span>{{comment.Name}} {{comment.Lastname}}</span>
+                <br>
+                <small>{{comment.Date}}</small> 
+                <img src="images/icons/reply-icn.svg">
+              </div>
+              <p>{{comment.Comment}}</p>
             </div>
-            
-            <p>I’m just testing the comment section. I really like this car. I especially like the fact that it only costs $3M. That’s amazing.</p>
+
+            <div class="commentPanel posted reply" ng-repeat="reply in comment.Replies">
+              <img class="avatar" ng-src="images/{{reply.Avatar}}">
+              <div class="postInfo">
+                <span>{{reply.Name}} {{reply.Lastname}}</span>
+                <br>
+                <small>{{reply.Date}}</small>
+              </div>
+              <p>{{reply.Reply}}</p>
+            </div>
           </div>
 
-          <div class="commentPanel posted reply">
-            <img class="avatar" src="images/avatar-steven.png">
-            <div class="postInfo">
-              <span>Steven Clayton</span>
-              <br>
-              <small>4 days ago</small>
-              <img src="images/icons/reply-icn.svg"> 
-            </div>
-            
-            <p>Thanks Alfred. I’m glad you like it. We decided to release it with $3M price since this is our first STRV M6 car. We’re still learning.</p>
-          </div>
-
-          <div class="commentPanel posted">
-            <img class="avatar" src="images/avatar-jim.png">
-            <div class="postInfo">
-              <span>Jim Lindsey</span>
-              <br>
-              <small>5 days ago</small>
-              <img src="images/icons/reply-icn.svg"> 
-            </div>
-            
-            <p>Yeah! Attorney-client privilege. I mean, that’s a big one. That’s something I provide for you. If I give up Pinkman, well, then you’re gonna be asking, Saul gives ‘em up pretty easy. What’s to keep him from giving me up?  Y’see, so, then where’s the trust?</p>
-          </div>
         </div>
         
       </div>
@@ -216,6 +204,7 @@
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/moment/moment.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     
@@ -238,6 +227,7 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/controllers/comments-ctrl.js"></script>
+    <script src="scripts/filters/filters.js"></script>
     <!-- endbuild -->
   </body>
 </html>

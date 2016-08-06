@@ -5,7 +5,8 @@
     "bootstrap-sass": "~3.3.5",
     "modernizr": "~2.8.1",
     "font-awesome": "^4.6.3",
-    "angular": "^1.5.8"
+    "angular": "^1.5.8",
+    "moment": "^2.14.1"
   },
   "overrides": {
     "bootstrap-sass": {
