@@ -1,3 +1,5 @@
 'use strict';
 
-var app = angular.module( 'strv', []);
+(function () {
+    angular.module('strv', [/*Inject dependencies here*/]);
+})();

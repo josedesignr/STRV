@@ -127,7 +127,7 @@
 
 
     <!-- ///////////////////////////////  - COMMENTS - //////////////-->
-    <section id="comments" class="comments">
+    <section id="comments" class="comments" ng-controller="CommentsCtrl">
       <div class="container">
         <h3 class="numberSection">03</h3>
         <h3 class="titleSection">COMMENTS</h3>
@@ -160,7 +160,7 @@
           <div class="commentPanel posted reply">
             <img class="avatar" src="images/avatar-steven.png">
             <div class="postInfo">
-              <span>Alfred Henderson</span>
+              <span>Steven Clayton</span>
               <br>
               <small>4 days ago</small>
               <img src="images/icons/reply-icn.svg"> 
@@ -172,7 +172,7 @@
           <div class="commentPanel posted">
             <img class="avatar" src="images/avatar-jim.png">
             <div class="postInfo">
-              <span>Alfred Henderson</span>
+              <span>Jim Lindsey</span>
               <br>
               <small>5 days ago</small>
               <img src="images/icons/reply-icn.svg"> 
@@ -237,6 +237,7 @@
     <!-- build:js scripts/main.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/main.js"></script>
+    <script src="scripts/controllers/comments-ctrl.js"></script>
     <!-- endbuild -->
   </body>
 </html>
