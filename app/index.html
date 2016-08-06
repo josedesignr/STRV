@@ -25,7 +25,7 @@
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body ng-cloak>
+  <body ng-controller="MainCtrl" ng-cloak>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -38,15 +38,15 @@
         <li class="navOption"><a href="#comments">COMMENT</a></li>
       </ul>
       
-      <i class="glyphicon glyphicon-menu-hamburger visible-xs" id="openMenu"></i>
+      <i class="glyphicon glyphicon-menu-hamburger visible-xs" ng-click="openMenu = true"></i>
       
-      <nav id="nav-mobile" class="visible-xs">
+      <nav id="nav-mobile" class="visible-xs" ng-class="{'menu-is-open' : openMenu}">
         <div style="position:relative">
-          <i id="closeMenu" class="glyphicon glyphicon-remove"></i>
+          <i ng-click="openMenu = false" class="glyphicon glyphicon-remove"></i>
           <ul>
-            <li class="navOption"><a href="#">ABOUT US</a></li>
-            <li class="navOption"><a href="#">HOW IT WORKS</a></li>
-            <li class="navOption"><a href="#">COMMENT</a></li>
+            <li class="navOption" ng-click="openMenu = false"><a href="#about-us">ABOUT US</a></li>
+            <li class="navOption" ng-click="openMenu = false"><a href="#how-it-works">HOW IT WORKS</a></li>
+            <li class="navOption" ng-click="openMenu = false"><a href="#comments">COMMENT</a></li>
           </ul>
         </div>
       </nav>

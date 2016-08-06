@@ -6,6 +6,14 @@
  * # TableCtrl
  * Controller of the hrdirektApp
  */
+
+angular.module('strv').controller('MainCtrl', ['$scope', '$http', function ($scope, $http) {
+
+    $scope.openMenu = false;
+
+}]);
+
+
 angular.module('strv').controller('CommentsCtrl', ['$scope', '$http', function ($scope, $http) {
 
 
@@ -14,17 +22,17 @@ angular.module('strv').controller('CommentsCtrl', ['$scope', '$http', function (
 	$http.get('json/comments.json').success(function(data) {
       $scope.amountComments = data.comments.length;
       $scope.comments = data.comments;
-      
-      for (var i=0; i<$scope.amountComments; i++){
-        $scope.comments[i].Date = moment($scope.comments[i].Date, "X").format("DD MMM YYYY");
 
-        var amountReplies = $scope.comments[i].Replies.length;
-        if (amountReplies >= 0){
-            for(var j=0; j<amountReplies; j++){
-                $scope.comments[i].Replies[j].Date = moment($scope.comments[i].Replies[j].Date, "X").format("DD MMM YYYY");
-            }    
+        for (var i=0; i<$scope.amountComments; i++){
+            $scope.comments[i].Date = moment($scope.comments[i].Date, "DD MMM YYYY").startOf('day').fromNow();
+
+            var amountReplies = $scope.comments[i].Replies.length;
+            if (amountReplies >= 0){
+                for(var j=0; j<amountReplies; j++){
+                    $scope.comments[i].Replies[j].Date = moment($scope.comments[i].Replies[j].Date, "DD MMM YYYY").startOf('day').fromNow();
+                }    
+            }
         }
-      }
     });
 
     $scope.myAvatar = "avatar-me.png";
@@ -36,7 +44,7 @@ angular.module('strv').controller('CommentsCtrl', ['$scope', '$http', function (
     		"Avatar": $scope.myAvatar,
     		"Name": "Álvaro José",
     		"Lastname": "Solís",
-    		"Date": moment().format("DD MMM YYYY"),
+    		"Date": moment().format("DD MMM YYYY, HH:mm a"),
     		"Comment": _comment,
     		"Replies": []
     	}
