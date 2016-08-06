@@ -35,7 +35,7 @@ angular.module('strv').controller('CommentsCtrl', ['$scope', '$http', function (
         }
     });
 
-    $scope.myAvatar = "avatar-me.png";
+    $scope.myAvatar = "me.jpg";
 
     $scope.commentNotSent = "";
 
