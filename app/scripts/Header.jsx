@@ -3,18 +3,21 @@ import React from 'react';
 
 export default class Header extends React.Component {
 
-  /*
+
   constructor(props) {
     super(props);
     this.state = {
-      open: false
+      navOpened: false
     };
-    this.handleClick = this.handleClick.bind(this);
   }
-  handleClick() {
-    this.setState({open: !this.state.open});
+
+  toggleNavMenu() {
+    this.setState({ navOpened: !this.state.navOpened });
   }
-  */
+
+  getNavClass() {
+    return this.state.navOpened ? 'visible-xs menu-is-open' : 'visible-xs';
+  }
 
   render() {
 
@@ -28,6 +31,7 @@ export default class Header extends React.Component {
     };
 
     /* ---------- */
+    /*
     var menuOpen = false;
     var classAssigned = "";
 
@@ -43,6 +47,7 @@ export default class Header extends React.Component {
       console.log("Menu is open: "+menuOpen);
       console.log("Class assigned is: "+classAssigned);
     }
+    */
 
     return (
       <div className="header" style={bgImage}>
@@ -53,15 +58,15 @@ export default class Header extends React.Component {
           <li className="navOption"><a href="#comments">COMMENT</a></li>
         </ul>
         
-        <i className="glyphicon glyphicon-menu-hamburger visible-xs" onClick={toggleClass}></i>
+        <i className="glyphicon glyphicon-menu-hamburger visible-xs" onClick={this.toggleNavMenu.bind(this)}></i>
         
-        <nav id="nav-mobile" className={classAssigned}>
+        <nav id="nav-mobile" className={this.getNavClass()}>
           <div style={posRelative}>
-            <i className="glyphicon glyphicon-remove closeMenu"></i>
+            <i className="glyphicon glyphicon-remove" onClick={this.toggleNavMenu.bind(this)}></i>
             <ul>
-              <li className="navOption closeMenu"><a href="#about-us">ABOUT US</a></li>
-              <li className="navOption closeMenu"><a href="#how-it-works">HOW IT WORKS</a></li>
-              <li className="navOption closeMenu"><a href="#comments">COMMENT</a></li>
+              <li className="navOption"><a onClick={this.toggleNavMenu.bind(this)} href="#about-us">ABOUT US</a></li>
+              <li className="navOption"><a onClick={this.toggleNavMenu.bind(this)} href="#how-it-works">HOW IT WORKS</a></li>
+              <li className="navOption"><a onClick={this.toggleNavMenu.bind(this)} href="#comments">COMMENT</a></li>
             </ul>
           </div>
         </nav>
