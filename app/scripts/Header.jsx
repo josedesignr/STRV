@@ -3,17 +3,18 @@ import React from 'react';
 
 export default class Header extends React.Component {
 
-
+  /*
   constructor(props) {
     super(props);
     this.state = {
-      liked: false
+      open: false
     };
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick() {
-    this.setState({liked: !this.state.liked});
+    this.setState({open: !this.state.open});
   }
+  */
 
   render() {
 
@@ -26,6 +27,22 @@ export default class Header extends React.Component {
       backgroundImage: 'url('+imgUrl+')'
     };
 
+    /* ---------- */
+    var menuOpen = false;
+    var classAssigned = "";
+
+    var toggleClass = function(){
+      if (menuOpen === false){
+        menuOpen = true;
+        classAssigned = "menu-is-open";
+      }
+      else{
+        menuOpen = false;
+        classAssigned = "";
+      }
+      console.log("Menu is open: "+menuOpen);
+      console.log("Class assigned is: "+classAssigned);
+    }
 
     return (
       <div className="header" style={bgImage}>
@@ -36,9 +53,9 @@ export default class Header extends React.Component {
           <li className="navOption"><a href="#comments">COMMENT</a></li>
         </ul>
         
-        <i className="glyphicon glyphicon-menu-hamburger visible-xs"></i>
+        <i className="glyphicon glyphicon-menu-hamburger visible-xs" onClick={toggleClass}></i>
         
-        <nav id="nav-mobile" className="visible-xs">
+        <nav id="nav-mobile" className={classAssigned}>
           <div style={posRelative}>
             <i className="glyphicon glyphicon-remove closeMenu"></i>
             <ul>
