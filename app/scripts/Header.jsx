@@ -30,44 +30,40 @@ export default class Header extends React.Component {
       backgroundImage: 'url('+imgUrl+')'
     };
 
-    /* ---------- */
-    /*
-    var menuOpen = false;
-    var classAssigned = "";
-
-    var toggleClass = function(){
-      if (menuOpen === false){
-        menuOpen = true;
-        classAssigned = "menu-is-open";
-      }
-      else{
-        menuOpen = false;
-        classAssigned = "";
-      }
-      console.log("Menu is open: "+menuOpen);
-      console.log("Class assigned is: "+classAssigned);
+    const menu = {
+      "ABOUT US" : "#about-us",
+      "HOW IT WORKS": "#how-it-works",
+      "COMMENT": "#comments"
     }
-    */
 
     return (
       <div className="header" style={bgImage}>
-      
+
         <ul className="navigationMenu hidden-xs">
-          <li className="navOption"><a href="#about-us">ABOUT US</a></li>
-          <li className="navOption"><a href="#how-it-works">HOW IT WORKS</a></li>
-          <li className="navOption"><a href="#comments">COMMENT</a></li>
+          {/*Here I am iterating over the Obj menu which is above; to generate the list menu*/}
+          {Object.keys(menu).map( key =>
+            <li key={menu[key]} className="navOption"><a href={menu[key]}>{key}</a></li>
+          )}
         </ul>
-        
+
         <i className="glyphicon glyphicon-menu-hamburger visible-xs" onClick={this.toggleNavMenu.bind(this)}></i>
         
         <nav id="nav-mobile" className={this.getNavClass()}>
           <div style={posRelative}>
             <i className="glyphicon glyphicon-remove" onClick={this.toggleNavMenu.bind(this)}></i>
+
+            {/* Direct way to make menu
+              <ul>
+                <li className="navOption"><a onClick={this.toggleNavMenu.bind(this)} href="#about-us">ABOUT US</a></li>
+                <li className="navOption"><a onClick={this.toggleNavMenu.bind(this)} href="#how-it-works">HOW IT WORKS</a></li>
+                <li className="navOption"><a onClick={this.toggleNavMenu.bind(this)} href="#comments">COMMENT</a></li>
+              </ul>
+            */}
+
             <ul>
-              <li className="navOption"><a onClick={this.toggleNavMenu.bind(this)} href="#about-us">ABOUT US</a></li>
-              <li className="navOption"><a onClick={this.toggleNavMenu.bind(this)} href="#how-it-works">HOW IT WORKS</a></li>
-              <li className="navOption"><a onClick={this.toggleNavMenu.bind(this)} href="#comments">COMMENT</a></li>
+              {Object.keys(menu).map( key => <li key={menu[key]} className="navOption"><a onClick={this.toggleNavMenu.bind(this)} href={menu[key]}>{key}</a></li> )}
             </ul>
+
           </div>
         </nav>
 
