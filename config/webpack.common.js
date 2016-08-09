@@ -15,6 +15,12 @@ const cssnano      = require('cssnano');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
+const htmlminifyOptions = {
+  collapseWhitespace: true,
+  caseSensitive: true,
+  html5: true
+};
+
 module.exports = {
   entry: './app/scripts/index.jsx',
 
@@ -53,7 +59,7 @@ module.exports = {
       inject: true,
       cache: !isProduction,
       favicon: './favicon.png',
-      minify: isProduction
+      minify: isProduction ? htmlminifyOptions : false
     }),
     // extract the SASS files into a target file in the 'css' folder
     new ExtractTextPlugin('styles/[name].[hash].css', {
