@@ -1,4 +1,3 @@
-var moment = require('moment');
 
 
 // Require SCSS to allow Webpack live render

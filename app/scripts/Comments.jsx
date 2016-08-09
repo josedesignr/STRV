@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+var moment = require('moment');
 
 import CommentsBox from "./partials/CommentsBox";
 import ReplyBox from "./partials/ReplyBox";
@@ -59,16 +59,9 @@ export default class Comments extends React.Component {
     }
     objToAdd.Comment = this.state.currentComment;
 
-    this.state.data.comments.push(objToAdd);
-    //var prueba = this.state.data.comments;
-    //this.setState({ prueba: prueba.push(objToAdd)});
+    this.state.data.comments.unshift(objToAdd);
+
     this.setState({ currentComment: ""});
-
-    console.log("OBJ TO ADD: ");
-    console.log(objToAdd);
-
-    console.log("COMMENTS ARRAY: ");
-    console.log(this.state.data.comments);
   }
 
 
@@ -113,7 +106,7 @@ export default class Comments extends React.Component {
 
       		<div className="postedComments">
 
-        			<h3>3 Comments</h3>
+        			<h3>{data.length} Comments</h3>
               
               {/*listComments is populated above the render function*/}
               {listComments}

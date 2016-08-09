@@ -1,7 +1,5 @@
 import React, { PropTypes } from 'react';
 
-var moment = require('moment');
-
 import Header from './Header.jsx';
 import AboutUs from './AboutUs.jsx';
 import HowItWorks from './HowItWorks.jsx';
