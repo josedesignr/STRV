@@ -1,6 +1,7 @@
 import React from 'react';
 
 
+
 import CommentsBox from "./partials/CommentsBox";
 import ReplyBox from "./partials/ReplyBox";
 
@@ -16,14 +17,14 @@ export default class Comments extends React.Component {
           "Avatar": "../images/avatar-alfred.png",
           "Name": "Alfred",
           "Lastname": "Henderson",
-          "Date": "4 days ago",
+          "Date": "04 Aug 2016",
           "Comment": "I'm just testing the comment section. I really like this car. I especially like the fact that it only costs $3M. That's amazing.",
           "Replies": [
           {
             "Avatar": "../images/avatar-steven.png",
             "Name": "Steven",
             "Lastname": "Clayton",
-            "Date": "4 days ago",
+            "Date": "04 Aug 2016",
             "Reply": "Thanks Alfred. I'm glad you like it. We decided to release it with $3M price since this is our first STRV M6 car. We're still learning."
           }]
         },
@@ -31,7 +32,7 @@ export default class Comments extends React.Component {
           "Avatar": "../images/avatar-jim.png",
           "Name": "Jim",
           "Lastname": "Lindsey",
-          "Date": "5 days ago",
+          "Date": "03 Aug 2016",
           "Comment": "Yeah! Attorney-client privilege. I mean, that's a big one. That's something I provide for you. If I give up Pinkman, well, then you're gonna be asking, Saul gives 'em up pretty easy. What's to keep him from giving me up?  Y'see, so, then where's the trust?",
           "Replies": []
         }]
@@ -52,7 +53,7 @@ export default class Comments extends React.Component {
       "Avatar": "../images/me.jpg",
       "Name": "Álvaro José",
       "Lastname": "Solís",
-      "Date": "Just now",
+      "Date": moment().format("DD MMM YYYY"),
       "Comment": "",
       "Replies": []
     }
