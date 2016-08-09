@@ -35,10 +35,40 @@ export default class Comments extends React.Component {
           "Comment": "Yeah! Attorney-client privilege. I mean, that's a big one. That's something I provide for you. If I give up Pinkman, well, then you're gonna be asking, Saul gives 'em up pretty easy. What's to keep him from giving me up?  Y'see, so, then where's the trust?",
           "Replies": []
         }]
-      }
+      },
+      currentComment: ""
     }
   }
 
+
+  handleChange(sentence){
+    var comment = sentence.target.value;
+    this.setState({ currentComment: comment });
+    console.log(comment);
+  }
+
+  addComment(){
+    var objToAdd = {
+      "Avatar": "../images/me.jpg",
+      "Name": "Álvaro José",
+      "Lastname": "Solís",
+      "Date": "Just now",
+      "Comment": "",
+      "Replies": []
+    }
+    objToAdd.Comment = this.state.currentComment;
+
+    this.state.data.comments.push(objToAdd);
+    //var prueba = this.state.data.comments;
+    //this.setState({ prueba: prueba.push(objToAdd)});
+    this.setState({ currentComment: ""});
+
+    console.log("OBJ TO ADD: ");
+    console.log(objToAdd);
+
+    console.log("COMMENTS ARRAY: ");
+    console.log(this.state.data.comments);
+  }
 
 
   render() {
@@ -48,7 +78,22 @@ export default class Comments extends React.Component {
       backgroundImage: 'url('+imgUrl+')'
     };
 
+    {/*This var is just to avoid writing this.state.data.comments each time, it refers to comments array*/}
     var data = this.state.data.comments; 
+
+    {/*Then, I give that array to a map funtion, to iterate over the existing comments and draw a CommentBox Component for each item found. (equivalent to ngRepeat)*/}
+
+    var listComments = [];
+    for (var i=0; i < data.length; i++) {
+        listComments.push( <CommentsBox key={"comment"+i} avatar={data[i].Avatar} name={data[i].Name+" "+data[i].Lastname} date={data[i].Date} comment={data[i].Comment} />);
+        
+        var replies = data[i].Replies;
+        if(replies.length > 0){
+          for (var j=0; j< replies.length; j++){
+            listComments.push(<ReplyBox key={"reply"+j} avatar={replies[j].Avatar} name={replies[j].Name+" "+replies[j].Lastname} date={replies[j].Date} reply={replies[j].Reply} />);
+          }
+        }
+    }
 
     return (
     	<section id="comments" className="comments">
@@ -60,21 +105,20 @@ export default class Comments extends React.Component {
 	        <div className="commentPanel">
 	          	<img className="avatar" src="images/me.jpg"/>
 	          	<div className="commentInput">
-	            	<input type="text" placeholder="Write your comment here..."/>
-	            	<button style={bgImage}></button>
+	            	<input type="text" placeholder="Write your comment here..." value={this.state.currentComment} onChange={ this.handleChange.bind(this) } />
+	            	<button style={bgImage} onClick={ this.addComment.bind(this) }></button>
 	          	</div>
 	        </div>
 
       		<div className="postedComments">
 
         			<h3>3 Comments</h3>
+              
+              {/*listComments is populated above the render function*/}
+              {listComments}
 
-              <CommentsBox avatar={data[0].Avatar} name={data[0].Name+" "+data[0].Lastname} date={data[0].Date} comment={data[0].Comment} />
-              <ReplyBox avatar={data[0].Replies[0].Avatar} name={data[0].Replies[0].Name+" "+data[0].Replies[0].Lastname} date={data[0].Replies[0].Date} comment={data[0].Replies[0].Reply} />
-              <CommentsBox avatar={data[1].Avatar} name={data[1].Name+" "+data[1].Lastname} date={data[1].Date} comment={data[1].Comment} />
 
-
-        			{/* This way is not needed anymore since I am feeding the Comments Box with props in the inner Component.
+        			{/* This way is not needed anymore since I am iterating above to generate the Comments Boxes.
               <div className="commentPanel posted">
           			<img className="avatar" src="images/avatar-alfred.png"/>
           			<div className="postInfo">

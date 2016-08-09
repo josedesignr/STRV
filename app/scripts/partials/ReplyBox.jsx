@@ -10,7 +10,7 @@ export default class ReplyBox extends React.Component {
 					<br/>
 					<small>{this.props.date}</small> 
 				</div>
-				<p>{this.props.comment}</p>
+				<p>{this.props.reply}</p>
 			</div>
 		);
 	}
