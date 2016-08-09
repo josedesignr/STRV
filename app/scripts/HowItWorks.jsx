@@ -10,7 +10,6 @@ export default class HowItWorks extends React.Component {
       backgroundImage: 'url('+imgUrl+')'
     };
 
-
     return (
       	<section id="how-it-works" className="how-it-works" style={bgImage}>
       		<div className="container">
