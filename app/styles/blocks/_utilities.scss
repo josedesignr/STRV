@@ -1,5 +1,138 @@
 
 
+/* FONT WEIGHTS*/
+.thin{
+	font-weight: 100;
+}
+
+.light{
+	font-weight: 300;
+}
+
+.medium{
+	font-weight: 500;
+}
+
+.bold{
+	font-weight: 700;
+}
+
+.bold-xl{
+	font-weight: 900;
+}
+
+
+
+/*FONT AND BACKGROUND COLORS*/
+
+.white {
+	color: white;
+}
+
+.bg-white {
+	background-color: white;
+}
+
+.black{
+	color: black;
+}
+
+.bg-black {
+	background-color: black;
+}
+
+
+/* POSITIONS */
+.relative {
+	position: relative;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.fixed {
+	position: fixed;
+}
+
+.to-bottom {
+	bottom: 0 !important;
+}
+
+.to-top {
+	top: 0 !important;
+}
+
+.to-right {
+	right: 0 !important;
+}
+
+.to-left {
+	left: 0 !important;
+}
+
+
+
+/* ALIGNMENT */
+.center {
+	text-align: center;
+}
+
+
+/* FULL SIZES */
+
+.full-w {
+	width: 100%;
+}
+
+.full-h {
+	height: 100%;
+}
+
+/* MIXINS */
+.transition-ease {
+	-ms-transition:all ease-in-out 0.4s;
+	-o-transition:all ease-in-out 0.4s;
+	-moz-transition:all ease-in-out 0.4s;
+	-webkit-transition:all ease-in-out 0.4s;
+	transition:all ease-in-out 0.4s;
+}
+
+/* OTHERS */
+
+.block {
+	display: block;
+}
+
+.inline {
+	display: inline-block;
+}
+
+.no-margin {
+	margin: 0;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.auto {
+	margin: auto;
+}
+
+.cursor-hand {
+	cursor: pointer;
+}
+
 .no-border{
 	border:none !important;
+}
+
+.no-decoration {
+	list-style: none;
+	text-decoration: none;
+}
+
+.no-repeat {
+	background-repeat: no-repeat;
 }

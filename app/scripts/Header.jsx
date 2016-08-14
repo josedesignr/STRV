@@ -16,7 +16,7 @@ export default class Header extends React.Component {
   }
 
   getNavClass() {
-    return this.state.navOpened ? 'visible-xs menu-is-open' : 'visible-xs';
+    return this.state.navOpened ? 'fixed bg-white to-top full-w full-h transition-ease visible-xs to-left' : 'fixed bg-white to-top full-w full-h transition-ease visible-xs';
   }
 
   render() {
@@ -37,20 +37,20 @@ export default class Header extends React.Component {
     }
 
     return (
-      <div className="header" style={bgImage}>
+      <div className="header no-border relative no-repeat" style={bgImage}>
 
-        <ul className="navigationMenu hidden-xs">
+        <ul className="navigationMenu hidden-xs center no-margin">
           {/*Here I am iterating over the Obj menu which is above; to generate the list menu*/}
           {Object.keys(menu).map( key =>
-            <li key={menu[key]} className="navOption"><a href={menu[key]}>{key}</a></li>
+            <li key={menu[key]} className="navOption bold inline"><a href={menu[key]}>{key}</a></li>
           )}
         </ul>
 
-        <i className="glyphicon glyphicon-menu-hamburger visible-xs" onClick={this.toggleNavMenu.bind(this)}></i>
+        <i className="glyphicon glyphicon-menu-hamburger visible-xs absolute white cursor-hand" onClick={this.toggleNavMenu.bind(this)}></i>
         
         <nav id="nav-mobile" className={this.getNavClass()}>
           <div style={posRelative}>
-            <i className="glyphicon glyphicon-remove" onClick={this.toggleNavMenu.bind(this)}></i>
+            <i className="glyphicon glyphicon-remove black" onClick={this.toggleNavMenu.bind(this)}></i>
 
             {/* Direct way to make menu
               <ul>
@@ -60,8 +60,8 @@ export default class Header extends React.Component {
               </ul>
             */}
 
-            <ul>
-              {Object.keys(menu).map( key => <li key={menu[key]} className="navOption"><a onClick={this.toggleNavMenu.bind(this)} href={menu[key]}>{key}</a></li> )}
+            <ul className="center no-margin no-padding">
+              {Object.keys(menu).map( key => <li key={menu[key]} className="navOption"><a className="black bold" onClick={this.toggleNavMenu.bind(this)} href={menu[key]}>{key}</a></li> )}
             </ul>
 
           </div>
@@ -75,7 +75,7 @@ export default class Header extends React.Component {
           <img src="images/icons/arrow-icn.svg"/>
         </button>
 
-        <h2 className="watermark hidden-xs hidden-sm">NEW STRV</h2>
+        <h2 className="watermark hidden-xs hidden-sm to-bottom absolute">NEW STRV</h2>
       </div>
     );
   }

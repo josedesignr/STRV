@@ -1,114 +1,89 @@
-.comments{
-	&>.container{
-		&>.commentPanel {
-			&>.commentInput{
-				border-bottom: 2px solid lighten($light-gray, 10%);
-				width: calc(100% - 240px);
-				padding-bottom: 20px;
-				position: absolute;
-				text-align: center;
-				bottom: 20px;
-				right: 80px;
-				&>input{
-					font-family: 'Roboto', sans-serif;
-					width: calc(100% - 40px);
-					font-weight: 100;
-					font-size: 1rem;
-					outline: none;
-					border: none;
-				}
-				&>button{
-					/*background-image: url('../images/icons/icn-send.svg');*/
-					background-color: transparent;
-					outline:none;
-					height: 30px;
-					width: 30px;
-					border: 0;
-					&:hover{
-						/*background-image: url('../images/icons/icn-send-hover.svg');*/
-					};
-				}
-			}
-		}
-		&>.postedComments{
-			width: 80%;
-			margin: auto;
-			&>h3{
-				font-family: 'Roboto', sans-serif;
-				font-weight: 100;
-				font-size: 2.6em;
-			}
-			&>.posted{
-				&>.avatar{
-					display: inline-block;
-					vertical-align: top;
-				}
-				&>.postInfo{
-					font-family: 'Roboto', sans-serif;
-					width: calc(100% - 70px);
-					display: inline-block;
-					padding-left: 20px;
-					color: $text-gray;
-					font-weight: 400;
-					padding: 12px;
-					height: 60px;
-					&>span{
-						font-size: 1rem;
-					}
-					&>small{
-						font-size: 1.2em;
-						color: $light-gray;
-					}
-					&>img{
-						position: absolute;
-						right: 30px;
-						top: 20px;
-					}
-				}
-				&>p{
-					font-family: 'Roboto', sans-serif;
-					color: $text-gray;
-					font-weight: 100;
-					margin-top: 20px;
-					font-size: 1rem;
-				}	
-			}
-			&>.reply{
-				border-left: 3px solid $red;
-				margin-left: 80px;
-			}
-		}
-	}	
+.commentInput{
+	border-bottom: 2px solid lighten($light-gray, 10%);
+	width: calc(100% - 240px);
+	padding-bottom: 20px;
+	bottom: 20px;
+	right: 80px;
+	&>input{
+		width: calc(100% - 40px);
+		font-size: 1rem;
+		outline: none;
+	}
+	&>button{
+		background-color: transparent;
+		outline:none;
+		height: 30px;
+		width: 30px;
+		&:hover{
+			/*background-image: url('../images/icons/icn-send-hover.svg');*/
+		};
+	}
 }
+
+.postedComments{
+	width: 80%;
+	&>h3{
+		font-size: 2.6em;
+	}
+	&>.posted{
+		&>.avatar{
+			vertical-align: top;
+		}
+		&>.postInfo{
+			width: calc(100% - 70px);
+			padding-left: 20px;
+			color: $text-gray;
+			font-weight: 400;
+			padding: 12px;
+			height: 60px;
+			&>span{
+				font-size: 1rem;
+			}
+			&>small{
+				font-size: 1.2em;
+				color: $light-gray;
+			}
+			&>img{
+				right: 30px;
+				top: 20px;
+			}
+		}
+		&>p{
+			color: $text-gray;
+			font-weight: 100;
+			margin-top: 20px;
+			font-size: 1rem;
+		}	
+	}
+	&>.reply{
+		border-left: 3px solid $red;
+		margin-left: 80px;
+	}
+}
+
 
 /*For screens between 320px and 768px*/
 @media screen and (min-width: 320px) and  (max-width: 767px) {
-	.comments{
-		&>.container{
-			&>.commentPanel{
-				&>.commentInput{
-					position: static;
-					border: none;
-					width: 100%;
-					&>input{
-						border-bottom: 2px solid lighten($light-gray, 10%);
-						padding: 15px 0;
-						width: 100%;
-					}
-					&>button{
-						margin-top: 20px;
-					}
-				}
-			}
-			&>.postedComments{
-				width: 100%;
-				&>.reply{
-					margin-left: 0;
-				}
-				&>h3{
-					text-align: center;
-				}
-			}
+	.commentInput{
+		position: static;
+		border: none;
+		width: 100%;
+		&>input{
+			border-bottom: 2px solid lighten($light-gray, 10%);
+			padding: 15px 0;
+			width: 100%;
+		}
+		&>button{
+			margin-top: 20px;
+		}
+	}
+	.postedComments{
+		width: 100%;
+		&>.reply{
+			margin-left: 0;
+		}
+		&>h3{
+			text-align: center;
 		}
 	}
 }

@@ -49,21 +49,22 @@ export default class Comments extends React.Component {
   }
 
   addComment(){
-    var objToAdd = {
-      "Avatar": "../images/me.jpg",
-      "Name": "Álvaro José",
-      "Lastname": "Solís",
-      "Date": moment().format("DD MMM YYYY"),
-      "Comment": "",
-      "Replies": []
+    if (this.state.currentComment !== ""){
+      var objToAdd = {
+        "Avatar": "../images/me.jpg",
+        "Name": "Álvaro José",
+        "Lastname": "Solís",
+        "Date": moment().format("DD MMM YYYY"),
+        "Comment": "",
+        "Replies": []
+      }
+      objToAdd.Comment = this.state.currentComment;
+
+      this.state.data.comments.unshift(objToAdd);
+
+      this.setState({ currentComment: ""});
     }
-    objToAdd.Comment = this.state.currentComment;
-
-    this.state.data.comments.unshift(objToAdd);
-
-    this.setState({ currentComment: ""});
   }
-
 
   render() {
 
@@ -90,23 +91,23 @@ export default class Comments extends React.Component {
     }
 
     return (
-    	<section id="comments" className="comments">
+    	<section id="comments">
     		<div className="container">
       		<h3 className="numberSection">03</h3>
       		<h3 className="titleSection">COMMENTS</h3>
       		<div className="red-line hidden-xs"></div>
 
 	        <div className="commentPanel">
-	          	<img className="avatar" src="images/me.jpg"/>
-	          	<div className="commentInput">
-	            	<input type="text" placeholder="Write your comment here..." value={this.state.currentComment} onChange={ this.handleChange.bind(this) } />
-	            	<button style={bgImage} onClick={ this.addComment.bind(this) }></button>
+	          	<img className="avatar inline" src="images/me.jpg"/>
+	          	<div className="commentInput center absolute">
+	            	<input className="no-border thin" type="text" placeholder="Write your comment here..." value={this.state.currentComment} onChange={ this.handleChange.bind(this) } />
+	            	<button className="no-border" style={bgImage} onClick={ this.addComment.bind(this) }></button>
 	          	</div>
 	        </div>
 
-      		<div className="postedComments">
+      		<div className="postedComments auto">
 
-        			<h3>{data.length} Comments</h3>
+        			<h3 className="thin">{data.length} Comments</h3>
               
               {/*listComments is populated above the render function*/}
               {listComments}

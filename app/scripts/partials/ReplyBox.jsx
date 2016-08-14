@@ -4,8 +4,8 @@ export default class ReplyBox extends React.Component {
 	render(){
 		return(
 			<div className="commentPanel posted reply">
-				<img className="avatar" src={this.props.avatar}/>
-				<div className="postInfo">
+				<img className="avatar inline" src={this.props.avatar}/>
+				<div className="postInfo inline">
 					<span>{this.props.name}</span>
 					<br/>
 					<small>{this.props.date}</small> 

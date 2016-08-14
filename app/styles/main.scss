@@ -3,7 +3,7 @@ $icon-font-path: '../fonts/';
 
 @import "blocks/variables";
 @import "blocks/utilities";
-@import "blocks/media";
+@import "blocks/base";
 @import "blocks/header";
 @import "blocks/about-us";
 @import "blocks/how-it-works";
@@ -16,10 +16,6 @@ $icon-font-path: '../fonts/';
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
-}
-
-html {
-  font-size: 16px;
 }
 
 /* Space out content a bit */

@@ -12,7 +12,7 @@ export default class GetYours extends React.Component {
     };
 
     return (
-    	<section className="get-yours" style={bgImage}>
+    	<section className="get-yours no-repeat full-w relative" style={bgImage}>
       		<h1>Get Your STRV M6</h1>
       		<h5>Simple Designy Car for Designers</h5>
 
@@ -20,9 +20,9 @@ export default class GetYours extends React.Component {
         		<img src="images/icons/arrow-icn.svg"/>
       		</button>
 
-      		<footer>
-        		<div>
-          			<h6>SHARE ON</h6>
+      		<footer className="absolute bg-black full-w to-bottom">
+        		<div className="center">
+          			<h6 className="inline center bold white no-margin">SHARE ON</h6>
           			<img src="images/icons/icn-facebook.svg"/>
           			<img src="images/icons/icn-twitter.svg"/>
         		</div>
