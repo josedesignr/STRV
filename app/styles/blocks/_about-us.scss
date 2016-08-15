@@ -1,95 +1,97 @@
-.container {
+.about-us{
+	position: relative;
 	width: 1200px;
-	&>.aboutUs{
-		&>h2{
-			font-size: 21em;
-			color: rgba(0,0,0,0.05);
-		}
+	&__slogan{
+		color: rgba(0,0,0,0.05);
+		text-align: center;
+		font-weight: 900;
+		font-size: 21em;
 	}
-}
-
-.panelFeatures{
-	box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.17);
-	padding: 20px 50px;
-	width: 1060px;
-	top: 300px;
-	left: 50%;
-	&> section {
-		margin-top: 60px;
-		&>div{
-			padding: 0 45px;
-			border-right: 1px solid lightgray;
-			&> h3 {
-				text-align: left;
-				font-weight: 400;
-				font-size: 2.6em;
-				margin-top: 60px;
-			}
-			&> p {
-				text-align: justify;
-				font-size: 1.5em;
-				line-height: 2em;
-				padding: 36px 0;
-				color: $text-gray;
-			}
-		}
-	}	
-}
-
-/*For screens between 320px and 768px*/
-@media screen and (min-width: 320px) and  (max-width: 767px) {
-	.container {
-		width: 100%;
-		&>.aboutUs {
-			&>h2 {
-				word-wrap:break-word;
-				font-size: 11em;
-				font-weight: 700;
-				line-height: 90px;
-				letter-spacing: -10px;
-				max-width: 320px;
-				margin-top: 50px;
-			}
-		}
-	}
-	.panelFeatures{
-		width: 100%;
-		top: 330px;
-		padding: 0;
-		&> section{
-			&>div{
-				padding: 0 30px;
-				border-right: none;
-				&> p{
-					border-bottom: 1px solid lightgray;
+	& .panel-features{
+		box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.17);
+		background-color: white;
+		position: absolute;
+		padding: 20px 50px;
+		width: 1060px;
+		top: 300px;
+		&__column {
+			text-align: center;
+			margin-top: 60px;
+			padding: 0;
+			&__text-box{
+				padding: 0 45px;
+				border-right: 1px solid lightgray;
+				&__title {
+					text-align: left;
+					font-weight: 400;
+					font-size: 2.6em;
+					margin-top: 60px;
+				}
+				&__text {
+					text-align: justify;
+					color: $text-gray;
+					font-size: 1.5em;
+					line-height: 2em;
+					font-weight: 100;
+					padding: 36px 0;
 				}
 			}
 		}	
 	}
 }
 
-/*For screens between 768 and 1199px*/
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-	.container {
-		&>.aboutUs {
-			&>h2 {
-				word-wrap:break-word;
-				line-height: 160px;
-				letter-spacing: -10px;
-			}
+
+
+/*For screens between 320px and 768px*/
+@media screen and (min-width: 320px) and  (max-width: 767px) {
+	.about-us {
+		width: calc(100% - 30px);
+		&__slogan {
+			word-wrap:break-word;
+			font-size: 11em;
+			font-weight: 700;
+			line-height: 90px;
+			letter-spacing: -10px;
+			max-width: 320px;
+			margin-top: 50px;
+		}
+		& .panel-features{
+			width: 100%;
+			top: 315px;
+			padding: 0;
+			&__column{
+				&__text-box{
+					padding: 0 30px;
+					border-right: none;
+					&__text{
+						border-bottom: 1px solid lightgray;
+					}
+				}
+			}	
 		}
 	}
-	.panelFeatures{
-		top: 420px;
-		width: 100%;
-		&> section{
-			&> div{
-				padding: 0 30px;
-				border-right: none;
-				max-width: 320px;
-				margin: auto;
-				&> p{
-					border-bottom: 1px solid lightgray;
+}
+
+/*For screens between 768 and 1199px*/
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+	.about-us {
+		&__slogan {
+			word-wrap:break-word;
+			line-height: 160px;
+			letter-spacing: -10px;
+		}
+		& .panel-features{
+			top: 420px;
+			width: 100%;
+			&__column{
+				&__text-box{
+					padding: 0 30px;
+					border-right: none;
+					max-width: 320px;
+					margin: auto;
+					&__text{
+						border-bottom: 1px solid lightgray;
+					}
 				}
 			}
 		}

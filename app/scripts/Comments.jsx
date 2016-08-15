@@ -88,21 +88,21 @@ export default class Comments extends React.Component {
     return (
     	<section id="comments">
     		<div className="container">
-      		<h3 className="numberSection">03</h3>
-      		<h3 className="titleSection">COMMENTS</h3>
+      		<h3 className="number-section">03</h3>
+      		<h3 className="title-section">COMMENTS</h3>
       		<div className="red-line hidden-xs"></div>
 
-	        <div className="commentPanel">
-	          	<img className="avatar inline" src="images/me.jpg"/>
-	          	<div className="commentInput center absolute">
-	            	<input className="no-border thin" type="text" placeholder="Write your comment here..." value={this.state.currentComment} onChange={ this.handleChange.bind(this) } />
-	            	<button className="no-border" onClick={ this.addComment.bind(this) }></button>
+	        <div className="comments__panel">
+	          	<img className="avatar block" src="images/me.jpg"/>
+	          	<div className="comments__input center absolute">
+	            	<input className="comments__input__textfield" type="text" placeholder="Write your comment here..." value={this.state.currentComment} onChange={ this.handleChange.bind(this) } />
+	            	<button className="comments__input__btn" onClick={ this.addComment.bind(this) }></button>
 	          	</div>
 	        </div>
 
-      		<div className="postedComments auto">
+      		<div className="comments__posted">
 
-        			<h3 className="thin">{data.length} Comments</h3>
+        			<h3 className="comments__posted__count">{data.length} Comments</h3>
               
               {/*listComments is populated above the render function*/}
               {listComments}

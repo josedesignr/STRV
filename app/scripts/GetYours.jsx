@@ -8,18 +8,18 @@ export default class GetYours extends React.Component {
 
     return (
     	<section className="get-yours no-repeat full-w relative">
-      		<h1>Get Your STRV M6</h1>
+      		<h1 className="get-yours__title">Get Your STRV M6</h1>
       		<h5>Simple Designy Car for Designers</h5>
 
       		<button className="red-button">BUILD YOUR OWN
-        		<img src="images/icons/arrow-icn.svg"/>
+        		<img className="red-button__icon" src="images/icons/arrow-icn.svg"/>
       		</button>
 
-      		<footer className="absolute bg-black full-w to-bottom">
+      		<footer className="footer absolute bg-black full-w to-bottom">
         		<div className="center">
-          			<h6 className="inline center bold white no-margin">SHARE ON</h6>
-          			<img src="images/icons/icn-facebook.svg"/>
-          			<img src="images/icons/icn-twitter.svg"/>
+          			<h6 className="footer__text inline center bold white no-margin">SHARE ON</h6>
+          			<img className="footer__icon" src="images/icons/icn-facebook.svg"/>
+          			<img className="footer__icon" src="images/icons/icn-twitter.svg"/>
         		</div>
       		</footer>
     	</section>

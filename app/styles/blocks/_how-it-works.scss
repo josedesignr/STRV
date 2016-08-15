@@ -1,63 +1,77 @@
 .how-it-works {
 	background-image: url('/images/bg-gray.png');
+	background-repeat: no-repeat;
 	background-position: 40% 0;
 	padding-top: 250px;
     margin-top: 200px;
-    &>.container{
-	    &>.row{
-	    	width: 992px;
-	    }
-	    &>.red-button{
-	    	width: 306px;
-	    }
-	    &>h2{
-	    	color: lighten($light-gray, 10%);
-	    	font-size: 16.9em;
-	    }
+    width: 100%;
+    &__steps{
+    	width: 992px;
+    	margin: auto;
+    	& .step{
+			border-right: 2px solid lighten($light-gray, 10%);
+			position: relative;
+			&__title{
+				color: lighten($light-gray, 10%);
+				font-size: 12.2em;
+				font-weight: 900;
+				padding: 0 30px;
+			}
+			&__text{
+				position: absolute;
+				font-weight: 400;
+				font-size: 2em;
+				bottom: 12px;
+				left: 30px;
+			}
+		}
+    }
+    & .red-button{
+    	width: 306px;
+    }
+    &__watermark{
+    	color: lighten($light-gray, 10%);
+    	font-size: 16.9em;
+    }
+    &__img {
+    	display: block;
+    	margin: auto;
+    	width: 100%;
     }
 }
 
-.step{
-	border-right: 2px solid lighten($light-gray, 10%);
-	&>h2{
-		color: lighten($light-gray, 10%);
-		font-size: 12.2em;
-		padding: 0 50px;
-	}
-	&>h4{
-		font-weight: 400;
-		font-size: 2em;
-		bottom: 12px;
-		left: 50px;
-	}
-}
+
 
 
 /*For screens between 320px and 768px*/
 @media screen and (min-width: 320px) and  (max-width: 767px) {
 	.how-it-works {
-		padding-top: 250px;
-	    margin-top: 1100px;
-	    &>.container{
-	    	&>.row{
-		    	text-align: center;
-		    	width: 100%;
-		    }
-		    &>.red-button{
-		    	width: 100%;
-		    	margin-top: 0;
-		    }
+		padding-top: 300px;
+	    margin-top: 1150px;
+	    padding-bottom: 50px;
+    	&__steps{
+	    	text-align: center;
+	    	width: 100%;
+	    	& .step{
+				padding-bottom: 30px;
+				border: none;
+				&__text{
+					bottom: 0;
+					left: 50%;
+					padding-bottom: 30px;
+					border-bottom: 2px solid lighten($light-gray, 10%);
+					-webkit-transform: translate(-50%, 0);
+					-moz-transform: translate(-50%, 0);
+					-ms-transform: translate(-50%, 0);
+					-o-transform: translate(-50%, 0);
+					transform: translate(-50%, 0);	
+				}
+			}
 	    }
-	}
-	.step{
-		padding-bottom: 30px;
-		&>h4{
-			bottom: 0;
-			left: 50%;
-			padding-bottom: 30px;
-			border-bottom: 2px solid lighten($light-gray, 10%);
-			-webkit-transform: translate(-50%, 0);
-		}
+	    & .red-button{
+	    	width: 100%;
+	    	margin-top: 0;
+	    }
 	}
 }
 
@@ -65,12 +79,11 @@
 /*For screens between 768 and 1199px*/
 @media screen and (min-width: 768px) and (max-width: 1199px) {
 	.how-it-works {
-		padding-top: 250px;
-	    margin-top: 1100px;
-	    &>.container{
-	    	&>.row{
-		    	width: 100%;  	
-		    }
+		padding-top: 300px;
+	    margin-top: 1150px;
+	    padding-bottom: 50px;
+    	&__steps{
+	    	width: 100%;  	
 	    }
 	}
 }

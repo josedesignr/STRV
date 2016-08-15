@@ -16,7 +16,7 @@ export default class Header extends React.Component {
   }
 
   getNavClass() {
-    return this.state.navOpened ? 'fixed bg-white to-top full-w full-h transition-ease visible-xs to-left' : 'fixed bg-white to-top full-w full-h transition-ease visible-xs';
+    return this.state.navOpened ? 'nav-mobile transition-ease visible-xs to-left' : 'nav-mobile transition-ease visible-xs';
   }
 
   render() {
@@ -32,20 +32,20 @@ export default class Header extends React.Component {
     }
 
     return (
-      <div className="header no-border relative no-repeat no-padding">
+      <div className="header">
 
-        <ul className="navigationMenu hidden-xs center no-margin">
+        <ul className="nav hidden-xs">
           {/*Here I am iterating over the Obj menu which is above; to generate the list menu*/}
           {Object.keys(menu).map( key =>
-            <li key={menu[key]} className="navOption bold inline"><a href={menu[key]}>{key}</a></li>
+            <li key={menu[key]} className="nav__option bold inline"><a className="nav__option__link" href={menu[key]}>{key}</a></li>
           )}
         </ul>
 
-        <i className="glyphicon glyphicon-menu-hamburger visible-xs absolute white cursor-hand" onClick={this.toggleNavMenu.bind(this)}></i>
+        <img src="images/icons/icn-menu.png" className="header__icon visible-xs" onClick={this.toggleNavMenu.bind(this)}/>   
         
         <nav id="nav-mobile" className={this.getNavClass()}>
           <div style={posRelative}>
-            <i className="glyphicon glyphicon-remove black" onClick={this.toggleNavMenu.bind(this)}></i>
+            <img src="images/icons/icn-close.png" className="nav-mobile__icon" onClick={this.toggleNavMenu.bind(this)}/>
 
             {/* Direct way to make menu
               <ul>
@@ -55,22 +55,23 @@ export default class Header extends React.Component {
               </ul>
             */}
 
-            <ul className="center no-margin no-padding">
-              {Object.keys(menu).map( key => <li key={menu[key]} className="navOption"><a className="black bold" onClick={this.toggleNavMenu.bind(this)} href={menu[key]}>{key}</a></li> )}
+            <ul className="nav-mobile__options">
+              {Object.keys(menu).map( key => <li key={menu[key]} className="nav-mobile__options__item"><a className="nav-mobile__options__item__link" onClick={this.toggleNavMenu.bind(this)} href={menu[key]}>{key}</a></li> )}
             </ul>
 
           </div>
         </nav>
 
 
-        <h1>NEW STRV M6</h1>
-        <h5>Simple Designy Car for Designers</h5>
+        <h1 className="header__title">NEW STRV M6</h1>
+        <h5 className="header__slogan">Simple Designy Car for Designers</h5>
     
-        <button className="red-button">LEAVE A COMMENT
-          <img src="images/icons/arrow-icn.svg"/>
+        <button className="red-button">
+          <a href="#comments" className="red-button__link">LEAVE A COMMENT</a>
+          <img className="red-button__icon" src="images/icons/arrow-icn.svg"/>
         </button>
 
-        <h2 className="watermark hidden-xs hidden-sm to-bottom absolute">NEW STRV</h2>
+        <h2 className="header__watermark watermark hidden-xs hidden-sm">NEW STRV</h2>
       </div>
     );
   }

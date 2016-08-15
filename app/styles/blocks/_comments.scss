@@ -1,90 +1,110 @@
-.commentInput{
-	border-bottom: 2px solid lighten($light-gray, 10%);
-	width: calc(100% - 240px);
-	padding-bottom: 20px;
-	bottom: 20px;
-	right: 80px;
-	&>input{
-		width: calc(100% - 40px);
-		font-size: 1rem;
-		outline: none;
+.comments {
+	&__panel{
+		box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.06);
+		background: #FFFFFF; 
+		padding: 20px 80px;
+		position: relative;
+		margin-top: 20px;
 	}
-	&>button{
-		background-image: url('/images/icons/icn-send.svg');
-		background-color: transparent;
-		outline:none;
-		height: 30px;
-		width: 30px;
-		&:hover{
-			background-image: url('/images/icons/icn-send-hover.svg');
-		};
+	&__input{
+		border-bottom: 2px solid lighten($light-gray, 10%);
+		width: calc(100% - 240px);
+		padding-bottom: 20px;
+		bottom: 20px;
+		right: 80px;
+		&__textfield{
+			width: calc(100% - 40px);
+			font-weight: 100;
+			font-size: 1rem;
+			outline: none;
+			border: 0;
+		}
+		&__btn{
+			background-image: url('/images/icons/icn-send.svg');
+			background-color: transparent;
+			outline:none;
+			height: 30px;
+			width: 30px;
+			border: 0;
+			&:hover{
+				background-image: url('/images/icons/icn-send-hover.svg');
+			};
+		}
 	}
-}
-
-.postedComments{
-	width: 80%;
-	&>h3{
-		font-size: 2.6em;
-	}
-	&>.posted{
-		&>.avatar{
+	&__posted{
+		margin: auto;
+		width: 80%;
+		&__count{
+			margin-top: 20px;
+			font-size: 2.6em;
+			font-weight: 100;
+		}
+		& .avatar{
 			vertical-align: top;
 		}
-		&>.postInfo{
+		&__info{
 			width: calc(100% - 70px);
+			display: inline-block;
 			padding-left: 20px;
 			color: $text-gray;
 			font-weight: 400;
 			padding: 12px;
 			height: 60px;
-			&>span{
+			&__name {
 				font-size: 1rem;
 			}
-			&>small{
-				font-size: 1.2em;
+			&__info {
 				color: $light-gray;
+				font-size: 1.2em;
 			}
-			&>img{
+			&__icon {
+				position: absolute;
 				right: 30px;
 				top: 20px;
 			}
 		}
-		&>p{
+		&__text{
 			color: $text-gray;
 			font-weight: 100;
 			margin-top: 20px;
 			font-size: 1rem;
 		}	
-	}
-	&>.reply{
-		border-left: 3px solid $red;
-		margin-left: 80px;
+		&__reply{
+			border-left: 3px solid $red;
+			margin-left: 80px;
+		}
 	}
 }
 
 
+
 /*For screens between 320px and 768px*/
 @media screen and (min-width: 320px) and  (max-width: 767px) {
-	.commentInput{
-		position: static;
-		border: none;
-		width: 100%;
-		&>input{
-			border-bottom: 2px solid lighten($light-gray, 10%);
-			padding: 15px 0;
+	.comments {
+		&__panel {
+			padding: 20px;
+		}
+		&__input {
+			position: static !important;
+			border: none;
 			width: 100%;
+			&__textfield {
+				border-bottom: 2px solid lighten($light-gray, 10%) !important;
+				padding: 15px 0;
+				width: 100%;
+			}
+			&__btn{
+				margin-top: 20px;
+			}
 		}
-		&>button{
-			margin-top: 20px;
-		}
-	}
-	.postedComments{
-		width: 100%;
-		&>.reply{
-			margin-left: 0;
-		}
-		&>h3{
-			text-align: center;
+		&__posted {
+			width: 100%;
+			&__reply{
+				margin-left: 0;
+			}
+			&__count{
+				text-align: center;
+			}
 		}
 	}
 }
