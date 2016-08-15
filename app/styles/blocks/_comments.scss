@@ -1,6 +1,7 @@
 .comments {
 	&__panel{
 		box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.06);
+		margin-bottom: 20px;
 		background: #FFFFFF; 
 		padding: 20px 80px;
 		position: relative;
@@ -20,14 +21,14 @@
 			border: 0;
 		}
 		&__btn{
-			background-image: url('/images/icons/icn-send.svg');
+			/*background-image: url('/images/icons/icn-send.svg');*/
 			background-color: transparent;
 			outline:none;
 			height: 30px;
 			width: 30px;
 			border: 0;
 			&:hover{
-				background-image: url('/images/icons/icn-send-hover.svg');
+				/*background-image: url('/images/icons/icn-send-hover.svg');*/
 			};
 		}
 	}
@@ -35,7 +36,7 @@
 		margin: auto;
 		width: 80%;
 		&__count{
-			margin-top: 20px;
+			margin: 20px;
 			font-size: 2.6em;
 			font-weight: 100;
 		}
@@ -53,7 +54,7 @@
 			&__name {
 				font-size: 1rem;
 			}
-			&__info {
+			&__date {
 				color: $light-gray;
 				font-size: 1.2em;
 			}

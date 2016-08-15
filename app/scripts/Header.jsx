@@ -21,6 +21,11 @@ export default class Header extends React.Component {
 
   render() {
 
+    var imgUrl = "images/header.png";
+    var bgImage = {
+      backgroundImage: 'url('+imgUrl+')'
+    };
+
     var posRelative = {
       position: 'relative'
     };
@@ -32,7 +37,7 @@ export default class Header extends React.Component {
     }
 
     return (
-      <div className="header">
+      <div className="header" style={bgImage}>
 
         <ul className="nav hidden-xs">
           {/*Here I am iterating over the Obj menu which is above; to generate the list menu*/}

@@ -14,14 +14,14 @@ export default class Comments extends React.Component {
       data: {
         "comments":[
         {
-          "Avatar": "../images/avatar-alfred.png",
+          "Avatar": "images/avatar-alfred.png",
           "Name": "Alfred",
           "Lastname": "Henderson",
           "Date": "04 Aug 2016",
           "Comment": "I'm just testing the comment section. I really like this car. I especially like the fact that it only costs $3M. That's amazing.",
           "Replies": [
           {
-            "Avatar": "../images/avatar-steven.png",
+            "Avatar": "images/avatar-steven.png",
             "Name": "Steven",
             "Lastname": "Clayton",
             "Date": "04 Aug 2016",
@@ -29,7 +29,7 @@ export default class Comments extends React.Component {
           }]
         },
         {
-          "Avatar": "../images/avatar-jim.png",
+          "Avatar": "images/avatar-jim.png",
           "Name": "Jim",
           "Lastname": "Lindsey",
           "Date": "03 Aug 2016",
@@ -51,7 +51,7 @@ export default class Comments extends React.Component {
   addComment(){
     if (this.state.currentComment !== ""){
       var objToAdd = {
-        "Avatar": "../images/me.jpg",
+        "Avatar": "images/me.jpg",
         "Name": "Álvaro José",
         "Lastname": "Solís",
         "Date": moment().format("DD MMM YYYY"),
@@ -67,6 +67,11 @@ export default class Comments extends React.Component {
   }
 
   render() {
+
+    var imgUrl = "images/icons/icn-send.svg";
+    var bgImage = {
+      backgroundImage: 'url('+imgUrl+')'
+    };
 
     {/*This var is just to avoid writing this.state.data.comments each time, it refers to comments array*/}
     var data = this.state.data.comments; 
@@ -96,7 +101,7 @@ export default class Comments extends React.Component {
 	          	<img className="avatar block" src="images/me.jpg"/>
 	          	<div className="comments__input center absolute">
 	            	<input className="comments__input__textfield" type="text" placeholder="Write your comment here..." value={this.state.currentComment} onChange={ this.handleChange.bind(this) } />
-	            	<button className="comments__input__btn" onClick={ this.addComment.bind(this) }></button>
+	            	<button className="comments__input__btn" onClick={ this.addComment.bind(this) } style={bgImage}></button>
 	          	</div>
 	        </div>
 
