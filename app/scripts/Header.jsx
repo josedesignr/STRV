@@ -25,11 +25,6 @@ export default class Header extends React.Component {
       position: 'relative'
     };
 
-    var imgUrl = "../images/header.png";
-    var bgImage = {
-      backgroundImage: 'url('+imgUrl+')'
-    };
-
     const menu = {
       "ABOUT US" : "#about-us",
       "HOW IT WORKS": "#how-it-works",
@@ -37,7 +32,7 @@ export default class Header extends React.Component {
     }
 
     return (
-      <div className="header no-border relative no-repeat" style={bgImage}>
+      <div className="header no-border relative no-repeat no-padding">
 
         <ul className="navigationMenu hidden-xs center no-margin">
           {/*Here I am iterating over the Obj menu which is above; to generate the list menu*/}

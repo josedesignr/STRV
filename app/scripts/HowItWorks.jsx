@@ -5,13 +5,8 @@ export default class HowItWorks extends React.Component {
 
   render() {
 
-  	var imgUrl = "../images/bg-gray.png";
-    var bgImage = {
-      backgroundImage: 'url('+imgUrl+')'
-    };
-
     return (
-      	<section id="how-it-works" className="how-it-works no-repeat full-w" style={bgImage}>
+      	<section id="how-it-works" className="how-it-works no-repeat full-w">
       		<div className="container">
         		<h3 className="numberSection">02</h3>
         		<h3 className="titleSection">HOW IT WORKS</h3>

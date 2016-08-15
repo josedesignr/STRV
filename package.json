@@ -1,7 +1,7 @@
 {
-  "name": "react-quickstart",
+  "name": "STRV",
   "version": "1.0.0",
-  "description": "Quickstart boilerplate for React projects",
+  "description": "STRV Entry Test",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --progress",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nosoycesaros/react-quickstart.git"
+    "url": "git@github.com:josedesignr/STRV.git"
   },
   "keywords": [
     "react",
@@ -20,12 +20,9 @@
     "sass",
     "webpack"
   ],
-  "author": "Cesaros",
+  "author": "josedesignr",
   "license": "SEE LICENSE IN LICENSE",
-  "bugs": {
-    "url": "https://github.com/nosoycesaros/react-quickstart/issues"
-  },
-  "homepage": "https://github.com/nosoycesaros/react-quickstart",
+  "homepage": "https://josedesignr.github.io/STRV/",
   "dependencies": {
     "jquery": "^3.1.0",
     "moment": "^2.14.1",
@@ -45,6 +42,7 @@
     "css-loader": "^0.23.1",
     "cssnano": "^3.7.3",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.22.0",
     "http-server": "^0.8.5",
     "ignore-styles": "^4.0.0",

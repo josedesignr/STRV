@@ -10,12 +10,13 @@
 		outline: none;
 	}
 	&>button{
+		background-image: url('/images/icons/icn-send.svg');
 		background-color: transparent;
 		outline:none;
 		height: 30px;
 		width: 30px;
 		&:hover{
-			/*background-image: url('../images/icons/icn-send-hover.svg');*/
+			background-image: url('/images/icons/icn-send-hover.svg');
 		};
 	}
 }

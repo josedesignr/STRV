@@ -12,7 +12,7 @@ export default class AboutUs extends React.Component {
 				<h3 className="titleSection">ABOUT US</h3>
 				<h2 className="bold-xl center">HANDMADE</h2>
 
-				<div className="panelFeatures absolute bg-white clearfix">
+				<div className="panelFeatures absolute bg-white anchor-translate clearfix">
 				  	<section className="col-xs-12 col-lg-4 center no-padding">
 				    	<img src="images/icons/brush.svg"/>
 				    	<div>

@@ -91,12 +91,21 @@
 
 /* MIXINS */
 .transition-ease {
+	-webkit-transition:all ease-in-out 0.4s;
+	-moz-transition:all ease-in-out 0.4s;
 	-ms-transition:all ease-in-out 0.4s;
 	-o-transition:all ease-in-out 0.4s;
-	-moz-transition:all ease-in-out 0.4s;
-	-webkit-transition:all ease-in-out 0.4s;
 	transition:all ease-in-out 0.4s;
 }
+
+.anchor-translate {
+	-webkit-transform: translate(-50%, 0);
+	-moz-transform: translate(-50%, 0);
+	-ms-transform: translate(-50%, 0);
+	-o-transform: translate(-50%, 0);
+	transform: translate(-50%, 0);	
+}
+
 
 /* OTHERS */
 
@@ -113,7 +122,7 @@
 }
 
 .no-padding {
-	padding: 0;
+	padding: 0 !important;
 }
 
 .auto {

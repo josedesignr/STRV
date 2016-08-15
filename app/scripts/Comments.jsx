@@ -68,11 +68,6 @@ export default class Comments extends React.Component {
 
   render() {
 
-  	var imgUrl = "../images/icons/icn-send.svg";
-    var bgImage = {
-      backgroundImage: 'url('+imgUrl+')'
-    };
-
     {/*This var is just to avoid writing this.state.data.comments each time, it refers to comments array*/}
     var data = this.state.data.comments; 
 
@@ -101,7 +96,7 @@ export default class Comments extends React.Component {
 	          	<img className="avatar inline" src="images/me.jpg"/>
 	          	<div className="commentInput center absolute">
 	            	<input className="no-border thin" type="text" placeholder="Write your comment here..." value={this.state.currentComment} onChange={ this.handleChange.bind(this) } />
-	            	<button className="no-border" style={bgImage} onClick={ this.addComment.bind(this) }></button>
+	            	<button className="no-border" onClick={ this.addComment.bind(this) }></button>
 	          	</div>
 	        </div>
 
